@@ -10,6 +10,6 @@ public class HelloController {
 
     @FXML
     protected void onHelloButtonClick() {
-        welcomeText.setText("Hello World!");
+        welcomeText.setText("Un piquito !?");
     }
 }
