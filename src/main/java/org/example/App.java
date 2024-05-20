@@ -4,6 +4,10 @@ import javafx.application.Application;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
 import javafx.stage.Stage;
+import org.example.entities.CategoriaJuego;
+import org.example.entities.Juego;
+import org.example.entities.PlataformaJuego;
+import org.example.repository.RepositorioJuego;
 
 import java.io.IOException;
 
@@ -32,6 +36,27 @@ public class App extends Application {
     }
 
     public static void main(String[] args) {
+        Juego Mario = new Juego ("Super Mario", 1, PlataformaJuego.OTHER, CategoriaJuego.PVP);
+        Juego Mario2 = new Juego ("Super Mario 2", 2, PlataformaJuego.OTHER, CategoriaJuego.PVP);
+        Juego Mario3 = new Juego ("Super Mario 3", 3, PlataformaJuego.OTHER, CategoriaJuego.PVP);
+        Juego CounterStrike = new Juego ("Counter Strike", 4, PlataformaJuego.STEAM, CategoriaJuego.PVP);
+        Juego Fortnite = new Juego ("Fortnite", 5, PlataformaJuego.STEAM, CategoriaJuego.PVP);
+        Juego Minecraft = new Juego ("Minecraft", 6, PlataformaJuego.STEAM, CategoriaJuego.PVP);
+        Juego CallOfDuty = new Juego ("Call of Duty", 7, PlataformaJuego.PLAYSTATION, CategoriaJuego.PVP);
+        Juego Dota2 = new Juego ("Dota 2", 8, PlataformaJuego.PLAYSTATION, CategoriaJuego.PVP);
+        Juego LeagueOfLegends = new Juego ("League of Legends", 9, PlataformaJuego.OTHER, CategoriaJuego.PVP);
+        Juego Fifa = new Juego ("FIFA", 10, PlataformaJuego.OTHER, CategoriaJuego.PVP);
+        RepositorioJuego repo = new RepositorioJuego();
+        repo.save(Mario);
+        repo.save(Mario2);
+        repo.save(Mario3);
+        repo.save(CounterStrike);
+        repo.save(Fortnite);
+        repo.save(Minecraft);
+        repo.save(CallOfDuty);
+        repo.save(Dota2);
+        repo.save(LeagueOfLegends);
+        repo.closeSession();
         launch();
 
     }
