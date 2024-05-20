@@ -8,7 +8,8 @@ module hibernate.example {
 
     opens org.example to javafx.fxml;
     opens org.example.entities;
+    opens org.example.repository;
     exports org.example;
-    exports org.example.controllers;
-    opens org.example.controllers to javafx.fxml;
+    exports org.example.javafxController;
+    opens org.example.javafxController to javafx.fxml;
 }
