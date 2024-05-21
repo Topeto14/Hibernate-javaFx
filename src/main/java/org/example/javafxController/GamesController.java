@@ -36,14 +36,7 @@ public class GamesController implements Initializable { /* Para inicializar la e
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { /* Inicializa la estructura de la ventana */
-        juegoId.setCellValueFactory(new PropertyValueFactory<>("id")); /* Crea la columna de id */
-        juegoNombre.setCellValueFactory(new PropertyValueFactory<>("nombre")); /* Crea la columna de nombre */
-        juegoPegi.setCellValueFactory(new PropertyValueFactory<>("pegi")); /* Crea la columna de pegi */
-        juegoPlataforma.setCellValueFactory(new PropertyValueFactory<>("plataforma")); /* Crea la columna de plataforma */
-        juegoCategoria.setCellValueFactory(new PropertyValueFactory<>("categoria")); /* Crea la columna de categoria */
 
-        RepositorioJuego repo = new RepositorioJuego();                                 /* Crea el repositorio */
-        List<Juego> juegos = repo.findAll();                                 /* Obtiene todos los juegos del repositorio */
         juegoTabla.setItems(FXCollections.observableArrayList(juegos));     /* Carga el listado de juegos en la tabla */
     }
 }
