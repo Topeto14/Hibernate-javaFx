@@ -1,6 +1,7 @@
 package org.example.javafxController;
 
 import javafx.collections.FXCollections;
+import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
 import javafx.scene.control.Tab;
@@ -36,7 +37,17 @@ public class GamesController implements Initializable { /* Para inicializar la e
 
     @Override
     public void initialize(URL url, ResourceBundle resourceBundle) { /* Inicializa la estructura de la ventana */
+        juegoId.setCellValueFactory(new PropertyValueFactory<Juego, Long>("id")); /* Crea la columna de id */
+        juegoNombre.setCellValueFactory(new PropertyValueFactory<Juego, String>("nombre")); /* Crea la columna de nombre */
+        juegoPegi.setCellValueFactory(new PropertyValueFactory<Juego, Integer>("pegi")); /* Crea la columna de pegi */
+        juegoPlataforma.setCellValueFactory(new PropertyValueFactory<Juego, String>("plataforma")); /* Crea la columna de plataforma */
+        juegoCategoria.setCellValueFactory(new PropertyValueFactory<Juego, String>("categoria")); /* Crea la columna de categoria */
 
-        juegoTabla.setItems(FXCollections.observableArrayList(juegos));     /* Carga el listado de juegos en la tabla */
+        RepositorioJuego repo = new RepositorioJuego(); /* Crea el repositorio de juegos */
+        List<Juego> juegos = repo.findAll();            /* Recupera todos los juegos de la base de datos */
+        juegoTabla.setItems(FXCollections.observableArrayList(juegos)); /* Carga el listado de juegos en la tabla */
+    }
+
+    public void onHelloButtonClick(ActionEvent actionEvent) {
     }
 }
